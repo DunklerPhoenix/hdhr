@@ -259,7 +259,7 @@ class HdhrDeviceQuery(object):
         unparsed = ascii_str(raw_str.value)
 
         regex = re.compile(
-            r'^(?P<program>\d+): (?P<vchannel>\d+(?:\.\d+)?)(?: (?P<name>\S+))??(?: \((?P<flags>.+)\))?$',
+            r'^(?P<program>\d+): (?P<vchannel>\d+(?:\.\d+)?)(?: (?P<name>.+))??(?: \((?P<flags>.+)\))?$',
             re.MULTILINE)
         
         return [StreamInfo(**m.groupdict()) for m in regex.finditer(unparsed)]

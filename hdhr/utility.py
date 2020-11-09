@@ -4,7 +4,8 @@ def ascii_bytes(value):
     return bytes(value, encoding='ascii')
 
 def ascii_str(value):
-    return str(value, encoding='ascii')
+    value = str(value, encoding="utf-8").encode("ascii", errors="ignore").decode()
+    return value
 
 def ip_int_to_ascii(ip_int):
     return str(ipaddress.ip_address(ip_int))
